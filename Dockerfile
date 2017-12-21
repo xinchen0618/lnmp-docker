@@ -8,7 +8,7 @@ RUN rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos
 COPY supervisord.conf /etc/supervisord.conf
 COPY remi-php71.repo /etc/yum.repos.d/remi-php71.repo
 
-RUN yum install -y php php-fpm php-phalcon3 php-gd && \
+RUN yum install -y php php-fpm php-phalcon3 php-gd php-mysqlnd && \
     yum clean all
 
 COPY www.conf /etc/php-fpm.d/www.conf
