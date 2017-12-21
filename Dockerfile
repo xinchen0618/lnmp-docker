@@ -13,4 +13,3 @@ RUN yum install -y php php-fpm php-phalcon3 php-gd php-mysqlnd && \
 
 COPY www.conf /etc/php-fpm.d/www.conf
 
-CMD ["supervisord"]
