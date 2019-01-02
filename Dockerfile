@@ -10,7 +10,8 @@ COPY supervisord.conf /etc/supervisord.conf
 COPY remi-php71.repo /etc/yum.repos.d/remi-php71.repo
 
 RUN yum install -y php php-fpm php-phalcon3 php-gd php-mysqlnd && \
-    yum clean all
+    yum clean all && \
+    mkdir /run/php-fpm
 
 COPY www.conf /etc/php-fpm.d/www.conf
 
